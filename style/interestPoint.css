@@ -1,0 +1,19 @@
+.interest-point {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background: #f44;
+    padding: 20px;
+    border-radius: 5px;
+    min-height: 120px;
+    height: max-content;
+}
+
+.interest-point.Attraction {
+    background: #49f;
+}
+
+.interest-point.Place {
+    background: #f94;
+}

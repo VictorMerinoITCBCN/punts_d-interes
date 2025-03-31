@@ -1,0 +1,164 @@
+:root {
+    --white: #fff;
+    --black: #222;
+    --black-2: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    display: flex;
+}
+
+#map {
+    height: 100vh;
+    flex: 1;
+}
+
+#map #center-map-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    padding: 10px;
+}
+
+select, button, input {
+    border-radius: 5px;
+}
+
+select, button {
+    padding: 10px;
+    border: none;
+    background: var(--black);
+    color: var(--white);
+}
+
+input {
+    background: var(--white);
+    color: var(--black);
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+aside {
+    position: relative;
+    width: 30%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    background: var(--black-2);
+    color: var(--white);
+    transition: all .5s;
+}
+
+aside.close {
+    width: 50px;
+
+    header, main, footer {
+        display: none;
+    }
+
+    #minimize-btn span {
+        transform: rotate(180deg);
+        transition: all .5s;
+    }
+
+}
+
+aside #minimize-btn {
+    display: flex;
+    right: 0;
+    top: 140px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: translateX(90%);
+    z-index: 999;
+    background: var(--black-2);
+    height: 50px;
+    width: 50px;
+    border-radius: 0 5em 5em 0;
+}
+
+aside header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    label, select {
+        width: calc(50% - 5px);
+    }
+
+    input {
+        width: 100%;
+    }
+}
+
+aside main {
+    width: 100%;
+    height: 50vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+aside footer {
+    display: flex;
+    gap: 5px;
+
+    span {
+        display: inline-block;
+        width: calc(50% - 2.5px);
+    }
+    button {
+        width: calc(50% - 2.5px);
+        padding: 10px;
+    }
+}
+
+aside footer {
+    display: flex;
+    flex-direction: column;
+
+    div {
+        width: 100%;
+    }
+}
+
+aside footer div {
+    height: 150px;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin: 20px auto;
+
+    &.highlight {
+        border-color: #00f;
+    }
+}
